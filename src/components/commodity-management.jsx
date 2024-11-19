@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
 import {
   Table,
   TableBody,
@@ -8,14 +8,14 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+} from "../components/ui/table";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import {
   addCommodity,
   deleteCommodity,
   getAllCommodities,
   updateCommodity,
-} from "@/lib/api-config";
+} from "../lib/api-config";
 
 export default function CommodityManagement() {
   const [commodities, setCommodities] = useState([]);
