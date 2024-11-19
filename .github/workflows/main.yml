@@ -1,0 +1,40 @@
+name: Vite React CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Specify the Node.js version you want to use
+
+      - name: Install Dependencies
+        run: npm install  # Install dependencies using npm
+
+      - name: Build the App
+        run: npm run build  # Build the app using Vite
+
+      - name: Run Linting (optional but recommended)
+        run: npm run lint  # Run eslint on your codebase
+
+      - name: Run Tests (optional but recommended)
+        run: npm test -- --ci --reporters=default  # Run tests if you have them set up (e.g., with Jest)
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: react-app-build
+          path: dist/  # Vite outputs the build to the "dist" directory by default
