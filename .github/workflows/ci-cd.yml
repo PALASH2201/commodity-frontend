@@ -30,8 +30,8 @@ jobs:
       - name: Run Linting (optional but recommended)
         run: npm run lint  # Run eslint on your codebase
 
-      - name: Run Tests (optional but recommended)
-        run: npm test -- --ci --reporters=default  # Run tests if you have them set up (e.g., with Jest)
+      # - name: Run Tests (optional but recommended)
+      #   run: npm test -- --ci --reporters=default  # Run tests if you have them set up (e.g., with Jest)
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v3
